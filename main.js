@@ -1,3 +1,4 @@
+//Fonction pour créer nos éléments html avec des paramètres
 function createAndStyleElement(tag, className, content = "") {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -6,6 +7,7 @@ function createAndStyleElement(tag, className, content = "") {
   return element;
 }
 
+//Fonction pour le compteur
 function setupCounter(element) {
   let counter = 0;
   const setCounter = (count) => {
@@ -16,6 +18,7 @@ function setupCounter(element) {
   setCounter(0);
 }
 
+//function pricipale pour la créaton de la page
 function createPage() {
   const app = document.getElementById("app");
   const nav = document.createElement("nav");
@@ -118,14 +121,14 @@ function createPage() {
   const counterElement = document.getElementById("counter");
   setupCounter(counterElement);
 }
-
+//function pour afficher les sections
 function showSection(section) {
   document
     .querySelectorAll(".section")
     .forEach((sec) => sec.classList.remove("active"));
   section.classList.add("active");
 }
-
+//Récuperation des données sur un serveur distant
 async function fetchData() {
   const dataContainer = document.querySelector(".data-container");
   dataContainer.innerHTML = "";
